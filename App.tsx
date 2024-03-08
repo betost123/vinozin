@@ -1,31 +1,14 @@
 import React from 'react';
-import {ImageBackground, StyleSheet, Text, View} from 'react-native';
-import {HorizontalSpacer} from './src/atoms/Spacers';
-import PrimaryButton from './src/atoms/buttons/PrimaryButton';
-import SecondaryButton from './src/atoms/buttons/SecondaryButton';
+import BottomTabs from './src/navigation/AppStack';
+import {NavigationContainer} from '@react-navigation/native';
+import {StyleSheet, View} from 'react-native';
 
 function App(): React.JSX.Element {
-  const image = {
-    uri: 'https://images.ctfassets.net/6vzzfxkfl0iw/5Da8JsBdDb5bU8DbcJS3x0/f0fb8c23c25d8c2ae08ead79f8ee9b36/vinbild.png',
-  };
-
   return (
     <View style={styles.container}>
-      <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-        <View style={styles.blackBox}>
-          <Text style={{color: 'white'}}>Hej</Text>
-          <HorizontalSpacer spacing={2} />
-          <PrimaryButton
-            title="Logga in"
-            onPress={() => console.log('log in')}
-          />
-          <HorizontalSpacer spacing={2} />
-          <SecondaryButton
-            title="Skapa konto"
-            onPress={() => console.log('log in')}
-          />
-        </View>
-      </ImageBackground>
+      <NavigationContainer>
+        <BottomTabs />
+      </NavigationContainer>
     </View>
   );
 }

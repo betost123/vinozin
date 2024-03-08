@@ -3,7 +3,7 @@ import {colors} from './colors';
 const typography = {
   title: {
     fontSize: 20,
-    fontFamily: 'Poppins',
+    fontFamily: 'Tajwal-Bold',
     color: colors.dark,
   },
   subtitle: {
@@ -34,7 +34,7 @@ const typography = {
   },
   buttonText: {
     fontSize: 16,
-    fontFamily: 'Poppins-Medium',
+    fontFamily: 'Tajwal-Medium',
     color: colors.dark,
   },
   subtitleSmall: {

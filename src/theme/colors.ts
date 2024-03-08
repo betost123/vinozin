@@ -12,4 +12,5 @@ export const colors = {
   white: '#FFFFFF',
   black: '#000000',
   red: '#781515',
+  background: '#1D1C1B',
 };

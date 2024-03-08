@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {colors} from '../../theme/colors';
+import {ButtonText} from '../Typography';
 
 interface ButtonProps {
   title: string;
@@ -19,7 +20,7 @@ const PrimaryButton: React.FC<ButtonProps> = ({
       style={[{width: '100%'}, disabled && styles.disabled]}
       disabled={disabled}>
       <View style={styles.container}>
-        <Text style={styles.titleStyle}>{title}</Text>
+        <ButtonText styles={styles.titleStyle}>{title}</ButtonText>
       </View>
     </TouchableOpacity>
   );
