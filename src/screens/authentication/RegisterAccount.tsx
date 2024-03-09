@@ -1,11 +1,18 @@
 import * as React from 'react';
-import {Image, ImageBackground, StyleSheet, View} from 'react-native';
-import {Body, Title} from '../../atoms/Typography';
+
+import {
+  Image,
+  ImageBackground,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {HorizontalSpacer} from '../../atoms/Spacers';
-import PrimaryButton from '../../atoms/buttons/PrimaryButton';
+import TextField from '../../atoms/TextField';
+import {BodySmallFat, Subtitle} from '../../atoms/Typography';
 import SecondaryButton from '../../atoms/buttons/SecondaryButton';
 
-const AuthenticateScreen = ({navigation}: any) => {
+const RegisterAccountScreen = ({navigation}: any) => {
   const image = {
     uri: 'https://images.ctfassets.net/6vzzfxkfl0iw/5Da8JsBdDb5bU8DbcJS3x0/f0fb8c23c25d8c2ae08ead79f8ee9b36/vinbild.png',
   };
@@ -18,25 +25,43 @@ const AuthenticateScreen = ({navigation}: any) => {
             source={require('../../../assets/images/logomedium.png')}
             style={styles.logo}
           />
-          <HorizontalSpacer spacing={1} />
-          <Body styles={{color: 'white'}}>Välkommen till Vinozins värld!</Body>
           <HorizontalSpacer spacing={2} />
-          <PrimaryButton
-            title="Logga in"
-            onPress={() => navigation.navigate('LogIn')}
-          />
+          <Subtitle>Skapa konto</Subtitle>
+          <HorizontalSpacer spacing={1} />
+
+          <View style={{width: '100%'}}>
+            <TextField
+              placeholder="E-post"
+              title="E-post"
+              autoFocus
+              inputMode="email"
+            />
+          </View>
+          <HorizontalSpacer spacing={1} />
+          <View style={{width: '100%'}}>
+            <TextField
+              placeholder="Lösenord"
+              title="Lösenord"
+              secureTextEntry
+            />
+          </View>
           <HorizontalSpacer spacing={2} />
           <SecondaryButton
             title="Skapa konto"
-            onPress={() => navigation.navigate('Register')}
+            onPress={() => console.log('log in')}
           />
+
+          <HorizontalSpacer spacing={2} />
+          <TouchableOpacity onPress={() => navigation.navigate('LogIn')}>
+            <BodySmallFat>Jag har redan ett konto</BodySmallFat>
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     </View>
   );
 };
 
-export default AuthenticateScreen;
+export default RegisterAccountScreen;
 
 const styles = StyleSheet.create({
   container: {

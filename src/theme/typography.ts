@@ -44,9 +44,9 @@ const typography = {
     fontWeight: 700,
   },
   bodySmallFat: {
-    fontSize: 12,
-    fontFamily: 'Poppins-Bold',
-    color: colors.darkBlue,
+    fontSize: 14,
+    fontFamily: 'Tajawal-ExtraBold',
+    color: colors.white,
   },
 };
 

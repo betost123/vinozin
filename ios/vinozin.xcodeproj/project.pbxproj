@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* vinozinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* vinozinTests.m */; };
+		039D7B142B9C73770005F01F /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 039D7B132B9C73770005F01F /* GoogleService-Info (1).plist */; };
 		0552E5E814E54B80A6972EC9 /* Tajawal-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 644AC1A68AB54BC896B4882A /* Tajawal-Medium.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-vinozin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-vinozin.a */; };
 		0D1E6FFE22324CBCB7958366 /* Tajawal-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2489E1F8A2154572BF4A20FE /* Tajawal-ExtraLight.ttf */; };
@@ -37,6 +38,7 @@
 		00E356EE1AD99517003FC87E /* vinozinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vinozinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* vinozinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = vinozinTests.m; sourceTree = "<group>"; };
+		039D7B132B9C73770005F01F /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* vinozin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vinozin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = vinozin/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = vinozin/AppDelegate.mm; sourceTree = "<group>"; };
@@ -44,20 +46,20 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = vinozin/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = vinozin/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-vinozin-vinozinTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-vinozin-vinozinTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2489E1F8A2154572BF4A20FE /* Tajawal-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Tajawal-ExtraLight.ttf"; path = "../assets/fonts/Tajawal-ExtraLight.ttf"; sourceTree = "<group>"; };
-		301EA42AC49349B0AB64E373 /* Tajawal-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Tajawal-Regular.ttf"; path = "../assets/fonts/Tajawal-Regular.ttf"; sourceTree = "<group>"; };
+		2489E1F8A2154572BF4A20FE /* Tajawal-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Tajawal-ExtraLight.ttf"; path = "../assets/fonts/Tajawal-ExtraLight.ttf"; sourceTree = "<group>"; };
+		301EA42AC49349B0AB64E373 /* Tajawal-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Tajawal-Regular.ttf"; path = "../assets/fonts/Tajawal-Regular.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-vinozin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vinozin.debug.xcconfig"; path = "Target Support Files/Pods-vinozin/Pods-vinozin.debug.xcconfig"; sourceTree = "<group>"; };
-		500B38AE68FD4E30A01BD53E /* Tajawal-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Tajawal-Light.ttf"; path = "../assets/fonts/Tajawal-Light.ttf"; sourceTree = "<group>"; };
+		500B38AE68FD4E30A01BD53E /* Tajawal-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Tajawal-Light.ttf"; path = "../assets/fonts/Tajawal-Light.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-vinozin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vinozin.release.xcconfig"; path = "Target Support Files/Pods-vinozin/Pods-vinozin.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-vinozin-vinozinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vinozin-vinozinTests.debug.xcconfig"; path = "Target Support Files/Pods-vinozin-vinozinTests/Pods-vinozin-vinozinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-vinozin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-vinozin.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		644AC1A68AB54BC896B4882A /* Tajawal-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Tajawal-Medium.ttf"; path = "../assets/fonts/Tajawal-Medium.ttf"; sourceTree = "<group>"; };
+		644AC1A68AB54BC896B4882A /* Tajawal-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Tajawal-Medium.ttf"; path = "../assets/fonts/Tajawal-Medium.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = vinozin/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-vinozin-vinozinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vinozin-vinozinTests.release.xcconfig"; path = "Target Support Files/Pods-vinozin-vinozinTests/Pods-vinozin-vinozinTests.release.xcconfig"; sourceTree = "<group>"; };
-		A50FB8013CEA45DCAF6CBE5F /* Tajawal-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Tajawal-Black.ttf"; path = "../assets/fonts/Tajawal-Black.ttf"; sourceTree = "<group>"; };
-		BE4477283676428D9080E490 /* Tajawal-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Tajawal-Bold.ttf"; path = "../assets/fonts/Tajawal-Bold.ttf"; sourceTree = "<group>"; };
+		A50FB8013CEA45DCAF6CBE5F /* Tajawal-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Tajawal-Black.ttf"; path = "../assets/fonts/Tajawal-Black.ttf"; sourceTree = "<group>"; };
+		BE4477283676428D9080E490 /* Tajawal-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Tajawal-Bold.ttf"; path = "../assets/fonts/Tajawal-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FF27F97C7D2048DF88A4C2EF /* Tajawal-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Tajawal-ExtraBold.ttf"; path = "../assets/fonts/Tajawal-ExtraBold.ttf"; sourceTree = "<group>"; };
+		FF27F97C7D2048DF88A4C2EF /* Tajawal-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Tajawal-ExtraBold.ttf"; path = "../assets/fonts/Tajawal-ExtraBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		13B07FAE1A68108700A75B9A /* vinozin */ = {
 			isa = PBXGroup;
 			children = (
+				039D7B132B9C73770005F01F /* GoogleService-Info (1).plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -164,7 +167,6 @@
 				301EA42AC49349B0AB64E373 /* Tajawal-Regular.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -249,6 +251,9 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			packageReferences = (
+				039D7B152B9C74610005F01F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -278,6 +283,7 @@
 				E323628DFAB84EA6ADD189E5 /* Tajawal-ExtraBold.ttf in Resources */,
 				0D1E6FFE22324CBCB7958366 /* Tajawal-ExtraLight.ttf in Resources */,
 				1D19D0BFC2E24445A7E05D82 /* Tajawal-Light.ttf in Resources */,
+				039D7B142B9C73770005F01F /* GoogleService-Info (1).plist in Resources */,
 				0552E5E814E54B80A6972EC9 /* Tajawal-Medium.ttf in Resources */,
 				F836F053DCE543F59F4CDFF9 /* Tajawal-Regular.ttf in Resources */,
 			);
@@ -623,10 +629,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -694,10 +697,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -736,6 +736,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		039D7B152B9C74610005F01F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.22.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }
