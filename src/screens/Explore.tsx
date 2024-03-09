@@ -1,32 +1,37 @@
 import * as React from 'react';
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {Body, BodyTiny, Subtitle, SubtitleSmall} from '../atoms/Typography';
+import {
+  Body,
+  BodySmallFat,
+  BodyTiny,
+  Subtitle,
+  SubtitleSmall,
+} from '../atoms/Typography';
 import {HorizontalSpacer} from '../atoms/Spacers';
 import {colors} from '../theme/colors';
 import Card from '../atoms/Card';
 import HugButton from '../atoms/buttons/HugButton';
 import WineCard from '../molecules/WineCard';
 
-const HomeScreen = ({navigation}: any) => {
+const ExploreScreen = ({navigation}: any) => {
   return (
     <SafeAreaView style={styles.background}>
       <View style={styles.contentContainer}>
         <ScrollView>
-          <Subtitle styles={styles.subtitle}>Välkommen Betina!</Subtitle>
+          <Subtitle styles={styles.subtitle}>Utforska</Subtitle>
           <HorizontalSpacer spacing={1} />
-          <WineCard />
+          <WineCard short />
 
           <HorizontalSpacer spacing={1} />
-          <Card>
-            <HorizontalSpacer spacing={0.5} />
-            <SubtitleSmall>Din vinprofil:</SubtitleSmall>
-            <HorizontalSpacer spacing={1} />
-            <HugButton
-              title="Läs mer"
-              onPress={() => console.log('go to wine profile')}
-            />
-          </Card>
+
+          <Subtitle styles={styles.subtitle}>Vinbarer med provningar</Subtitle>
+
+          <HorizontalSpacer spacing={1} />
+          <View style={styles.bottomActionSection}>
+            <BodySmallFat>Visa alla</BodySmallFat>
+            <BodySmallFat>Visa nära mig</BodySmallFat>
+          </View>
         </ScrollView>
       </View>
     </SafeAreaView>
@@ -61,4 +66,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default ExploreScreen;

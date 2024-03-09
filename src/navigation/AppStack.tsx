@@ -2,6 +2,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from '../screens/HomeScreen';
 import {colors} from '../theme/colors';
+import Header from '../screens/Header';
 
 const Tab = createBottomTabNavigator();
 
@@ -11,6 +12,13 @@ function HomeStack() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="HomeStack" component={HomeScreen} />
+    </Stack.Navigator>
+  );
+}
+function ExploreStack() {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="ExploreStack" component={ExploreStack} />
     </Stack.Navigator>
   );
 }
@@ -36,12 +44,18 @@ function BottomTabs() {
   
             return icon;
           },*/
-        tabBarActiveTintColor: colors.darkBlue,
-        tabBarInactiveTintColor: colors.primary,
+        tabBarActiveTintColor: colors.white,
+        tabBarInactiveTintColor: colors.green,
         cardStyle: {backgroundColor: colors.background},
-        //header: () => <Header navigation={navigation} />,
+        tabBarStyle: {backgroundColor: colors.black},
+        header: () => <Header navigation={navigation} />,
       })}>
       <Tab.Screen name="Home" component={HomeStack} options={{title: 'Hem'}} />
+      <Tab.Screen
+        name="Explore"
+        component={ExploreStack}
+        options={{title: 'Utforska'}}
+      />
     </Tab.Navigator>
   );
 }

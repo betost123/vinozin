@@ -13,4 +13,5 @@ export const colors = {
   black: '#000000',
   red: '#781515',
   background: '#1D1C1B',
+  cardBackground: '#E8E8E8',
 };
