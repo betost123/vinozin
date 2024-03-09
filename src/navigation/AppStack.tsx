@@ -5,6 +5,7 @@ import {colors} from '../theme/colors';
 import Header from '../screens/Header';
 import ExploreScreen from '../screens/Explore';
 import TastingsScreen from '../screens/Tastings';
+import WineProfileScreen from '../screens/WineProfile';
 
 const Tab = createBottomTabNavigator();
 
@@ -28,6 +29,13 @@ function TastingsStack() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="TastingsScreen" component={TastingsScreen} />
+    </Stack.Navigator>
+  );
+}
+function WineProfileStack() {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="WineProfileScreen" component={WineProfileScreen} />
     </Stack.Navigator>
   );
 }
@@ -69,6 +77,11 @@ function BottomTabs() {
         name="Tastings"
         component={TastingsStack}
         options={{title: 'Provningar'}}
+      />
+      <Tab.Screen
+        name="WineProfile"
+        component={WineProfileStack}
+        options={{title: 'Vinprofil'}}
       />
     </Tab.Navigator>
   );

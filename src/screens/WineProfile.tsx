@@ -1,32 +1,20 @@
 import * as React from 'react';
-import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {Image, ScrollView, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {Body, BodyTiny, Subtitle, SubtitleSmall} from '../atoms/Typography';
+import {BodySmallFat, Subtitle, SubtitleSmall} from '../atoms/Typography';
 import {HorizontalSpacer} from '../atoms/Spacers';
 import {colors} from '../theme/colors';
-import Card from '../atoms/Card';
-import HugButton from '../atoms/buttons/HugButton';
 import WineCard from '../molecules/WineCard';
 
-const HomeScreen = ({navigation}: any) => {
+const WineProfileScreen = ({navigation}: any) => {
   return (
     <SafeAreaView style={styles.background}>
       <View style={styles.contentContainer}>
         <ScrollView>
-          <Subtitle styles={styles.subtitle}>Välkommen Betina!</Subtitle>
+          <Subtitle styles={styles.subtitle}>Vinprofil</Subtitle>
           <HorizontalSpacer spacing={1} />
-          <WineCard />
 
           <HorizontalSpacer spacing={1} />
-          <Card>
-            <HorizontalSpacer spacing={0.5} />
-            <SubtitleSmall>Din vinprofil:</SubtitleSmall>
-            <HorizontalSpacer spacing={1} />
-            <HugButton
-              title="Läs mer"
-              onPress={() => navigation.navigate('WineProfile')}
-            />
-          </Card>
         </ScrollView>
       </View>
     </SafeAreaView>
@@ -56,9 +44,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignContent: 'center',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     width: '100%',
   },
 });
 
-export default HomeScreen;
+export default WineProfileScreen;
