@@ -11,8 +11,28 @@ import {HorizontalSpacer} from '../../atoms/Spacers';
 import PrimaryButton from '../../atoms/buttons/PrimaryButton';
 import TextField from '../../atoms/TextField';
 import {BodySmallFat, Subtitle} from '../../atoms/Typography';
+import auth from '@react-native-firebase/auth';
 
 const LogInScreen = ({navigation}: any) => {
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+  const [resetPasswordModal, setResetPasswordModal] = React.useState(false);
+
+  const FirebaseSignIn = async () => {
+    await auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(response => {
+        console.log(response);
+        console.log(response.user.emailVerified);
+        console.log(response.user.email);
+        console.log(response.user.uid);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   const image = {
     uri: 'https://images.ctfassets.net/6vzzfxkfl0iw/5Da8JsBdDb5bU8DbcJS3x0/f0fb8c23c25d8c2ae08ead79f8ee9b36/vinbild.png',
   };
@@ -36,6 +56,7 @@ const LogInScreen = ({navigation}: any) => {
               title="E-post"
               autoFocus
               inputMode="email"
+              onChangeText={event => setEmail(event)}
             />
           </View>
           <HorizontalSpacer spacing={1} />
@@ -43,14 +64,12 @@ const LogInScreen = ({navigation}: any) => {
             <TextField
               placeholder="Lösenord"
               title="Lösenord"
+              onChangeText={event => setPassword(event)}
               secureTextEntry
             />
           </View>
           <HorizontalSpacer spacing={2} />
-          <PrimaryButton
-            title="Logga in"
-            onPress={() => console.log('log in')}
-          />
+          <PrimaryButton title="Logga in" onPress={FirebaseSignIn} />
 
           <HorizontalSpacer spacing={2} />
           <TouchableOpacity onPress={() => navigation.navigate('Register')}>

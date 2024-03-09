@@ -11,10 +11,40 @@ import {HorizontalSpacer} from '../../atoms/Spacers';
 import TextField from '../../atoms/TextField';
 import {BodySmallFat, Subtitle} from '../../atoms/Typography';
 import SecondaryButton from '../../atoms/buttons/SecondaryButton';
+import auth from '@react-native-firebase/auth';
 
 const RegisterAccountScreen = ({navigation}: any) => {
   const image = {
     uri: 'https://images.ctfassets.net/6vzzfxkfl0iw/5Da8JsBdDb5bU8DbcJS3x0/f0fb8c23c25d8c2ae08ead79f8ee9b36/vinbild.png',
+  };
+
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+  const [accountCreated, setAccountCreated] = React.useState(false);
+
+  const signUpUser = () => {
+    console.log(email);
+    console.log(password);
+    auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(response => {
+        console.log('user created');
+        console.log(response.user);
+        console.log(response.additionalUserInfo);
+        setAccountCreated(true);
+      })
+      .catch(error => {
+        if (error.code === 'auth/email-already-in-use') {
+          console.log('That email address is already in use!');
+        }
+
+        if (error.code === 'auth/invalid-email') {
+          console.log('That email address is invalid!');
+        }
+
+        console.error(error);
+      });
   };
 
   return (
@@ -33,6 +63,7 @@ const RegisterAccountScreen = ({navigation}: any) => {
             <TextField
               placeholder="E-post"
               title="E-post"
+              onChangeText={event => setEmail(event)}
               autoFocus
               inputMode="email"
             />
@@ -42,14 +73,16 @@ const RegisterAccountScreen = ({navigation}: any) => {
             <TextField
               placeholder="Lösenord"
               title="Lösenord"
+              onChangeText={event => setPassword(event)}
               secureTextEntry
             />
           </View>
           <HorizontalSpacer spacing={2} />
-          <SecondaryButton
-            title="Skapa konto"
-            onPress={() => console.log('log in')}
-          />
+          {accountCreated ? (
+            <BodySmallFat>Konto skapat!</BodySmallFat>
+          ) : (
+            <SecondaryButton title="Skapa konto" onPress={signUpUser} />
+          )}
 
           <HorizontalSpacer spacing={2} />
           <TouchableOpacity onPress={() => navigation.navigate('LogIn')}>

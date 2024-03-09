@@ -3,9 +3,18 @@ import BottomTabs from './src/navigation/AppStack';
 import {NavigationContainer} from '@react-navigation/native';
 import {StyleSheet, View} from 'react-native';
 import {AuthNavigation} from './src/navigation/AuthenticationStack';
+import auth from '@react-native-firebase/auth';
 
 function App(): React.JSX.Element {
-  const user = false;
+  const [user, setUser] = React.useState(false);
+
+  React.useEffect(() => {
+    auth().onAuthStateChanged(userState => {
+      if (userState) {
+        setUser(true);
+      }
+    });
+  }, []);
 
   return (
     <View style={styles.container}>
