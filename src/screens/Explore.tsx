@@ -1,17 +1,9 @@
 import * as React from 'react';
-import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {Image, ScrollView, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {
-  Body,
-  BodySmallFat,
-  BodyTiny,
-  Subtitle,
-  SubtitleSmall,
-} from '../atoms/Typography';
+import {BodySmallFat, Subtitle, SubtitleSmall} from '../atoms/Typography';
 import {HorizontalSpacer} from '../atoms/Spacers';
 import {colors} from '../theme/colors';
-import Card from '../atoms/Card';
-import HugButton from '../atoms/buttons/HugButton';
 import WineCard from '../molecules/WineCard';
 
 const ExploreScreen = ({navigation}: any) => {
@@ -29,8 +21,10 @@ const ExploreScreen = ({navigation}: any) => {
 
           <HorizontalSpacer spacing={1} />
           <View style={styles.bottomActionSection}>
-            <BodySmallFat>Visa alla</BodySmallFat>
-            <BodySmallFat>Visa nära mig</BodySmallFat>
+            <SubtitleSmall styles={{color: 'white'}}>Visa alla</SubtitleSmall>
+            <SubtitleSmall styles={{color: 'white'}}>
+              Visa nära mig
+            </SubtitleSmall>
           </View>
         </ScrollView>
       </View>
@@ -61,7 +55,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignContent: 'center',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     width: '100%',
   },
 });

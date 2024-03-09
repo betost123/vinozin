@@ -3,6 +3,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from '../screens/HomeScreen';
 import {colors} from '../theme/colors';
 import Header from '../screens/Header';
+import ExploreScreen from '../screens/Explore';
+import TastingsScreen from '../screens/Tastings';
 
 const Tab = createBottomTabNavigator();
 
@@ -11,14 +13,21 @@ const Stack = createNativeStackNavigator();
 function HomeStack() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="HomeStack" component={HomeScreen} />
+      <Stack.Screen name="HomeScreen" component={HomeScreen} />
     </Stack.Navigator>
   );
 }
 function ExploreStack() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="ExploreStack" component={ExploreStack} />
+      <Stack.Screen name="ExploreScreen" component={ExploreScreen} />
+    </Stack.Navigator>
+  );
+}
+function TastingsStack() {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="TastingsScreen" component={TastingsScreen} />
     </Stack.Navigator>
   );
 }
@@ -55,6 +64,11 @@ function BottomTabs() {
         name="Explore"
         component={ExploreStack}
         options={{title: 'Utforska'}}
+      />
+      <Tab.Screen
+        name="Tastings"
+        component={TastingsStack}
+        options={{title: 'Provningar'}}
       />
     </Tab.Navigator>
   );
