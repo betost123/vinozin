@@ -19,7 +19,7 @@ const typography = {
   },
   bodyFat: {
     fontSize: 14,
-    fontFamily: 'Tajawal-Regular',
+    fontFamily: 'Tajawal-Medium',
     color: colors.black,
   },
   bodySmall: {

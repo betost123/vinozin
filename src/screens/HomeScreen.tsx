@@ -7,8 +7,13 @@ import {colors} from '../theme/colors';
 import Card from '../atoms/Card';
 import HugButton from '../atoms/buttons/HugButton';
 import WineCard from '../molecules/WineCard';
+import {useAllWines} from '../graphql/hooks/useAllWines';
 
 const HomeScreen = ({navigation}: any) => {
+  const {wines, error, loading} = useAllWines();
+
+  console.log(wines);
+
   return (
     <SafeAreaView style={styles.background}>
       <View style={styles.contentContainer}>

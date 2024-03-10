@@ -10,11 +10,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "@apollo/client": "^3.9.6",
     "@react-native-firebase/app": "^19.0.1",
     "@react-native-firebase/auth": "^19.0.1",
     "@react-navigation/bottom-tabs": "^6.5.16",
     "@react-navigation/native-stack": "^6.9.22",
     "@react-navigation/stack": "^6.3.25",
+    "graphql": "^16.8.1",
     "react": "18.2.0",
     "react-native": "0.73.5",
     "react-native-gesture-handler": "^2.15.0",
