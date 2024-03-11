@@ -24,8 +24,8 @@ const typography = {
   },
   bodySmall: {
     fontSize: 12,
-    fontFamily: 'Poppins-Regular',
-    color: colors.darkBlue,
+    fontFamily: 'Tajawal-Regular',
+    color: colors.white,
   },
   bodyTiny: {
     fontSize: 12,

@@ -6,6 +6,7 @@ import Header from '../screens/Header';
 import ExploreScreen from '../screens/Explore';
 import TastingsScreen from '../screens/Tastings';
 import WineProfileScreen from '../screens/WineProfile';
+import TastingProtocolScreen from '../screens/TastingProtocol';
 
 const Tab = createBottomTabNavigator();
 
@@ -29,6 +30,7 @@ function TastingsStack() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="TastingsScreen" component={TastingsScreen} />
+      <Stack.Screen name="TastingProtocol" component={TastingProtocolScreen} />
     </Stack.Navigator>
   );
 }

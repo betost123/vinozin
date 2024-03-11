@@ -4,12 +4,17 @@ import {HorizontalSpacer} from '../atoms/Spacers';
 import {Body, BodyTiny, SubtitleSmall} from '../atoms/Typography';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import HugButton from '../atoms/buttons/HugButton';
+import {useNavigation, NavigationProp} from '@react-navigation/native';
 
 interface Props {
   short?: boolean;
 }
 
+type NavigationType = NavigationProp<any>;
+
 const WineCard: React.FC<Props> = ({short}) => {
+  const navigation = useNavigation<NavigationType>();
+
   return (
     <Card>
       <HorizontalSpacer spacing={0.5} />
@@ -41,7 +46,7 @@ const WineCard: React.FC<Props> = ({short}) => {
         <Text>
           <HugButton
             title="Läs mer"
-            onPress={() => console.log('go to wine tasting')}
+            onPress={() => navigation.navigate('TastingProtocol')}
           />
         </Text>
       </View>

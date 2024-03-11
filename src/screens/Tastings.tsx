@@ -7,6 +7,7 @@ import {colors} from '../theme/colors';
 import WineCard from '../molecules/WineCard';
 import SecondaryButton from '../atoms/buttons/SecondaryButton';
 import PrimaryButton from '../atoms/buttons/PrimaryButton';
+import InfoCard from '../molecules/InfoCard';
 
 const TastingsScreen = ({navigation}: any) => {
   return (
@@ -33,6 +34,19 @@ const TastingsScreen = ({navigation}: any) => {
           <HorizontalSpacer spacing={1} />
 
           <Subtitle styles={styles.subtitle}>Tidigare vinprovningar</Subtitle>
+          <HorizontalSpacer spacing={1} />
+
+          <InfoCard
+            title="Vecka 4: Franska viner"
+            subtitle="Sommelier: Mischa Billing"
+            onPress={() => console.log('open wine tasting week 4')}
+          />
+          <HorizontalSpacer spacing={1} />
+          <InfoCard
+            title="Vecka 2: Systembolagets nya viner"
+            subtitle="Sommelier: Mischa Billing"
+            onPress={() => console.log('open wine tasting week 2')}
+          />
 
           <HorizontalSpacer spacing={1} />
           <SecondaryButton

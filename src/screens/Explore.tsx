@@ -1,23 +1,19 @@
 import * as React from 'react';
-import {
-  ActivityIndicator,
-  FlatList,
-  Image,
-  ScrollView,
-  StyleSheet,
-  View,
-} from 'react-native';
+import {ActivityIndicator, FlatList, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {BodySmallFat, Subtitle, SubtitleSmall} from '../atoms/Typography';
+import {Subtitle, SubtitleSmall} from '../atoms/Typography';
 import {HorizontalSpacer} from '../atoms/Spacers';
 import {colors} from '../theme/colors';
 import WineCard from '../molecules/WineCard';
 import {useAllWineBars} from '../graphql/hooks/useAllWineBars';
 import {Winebar} from '../utils/models';
 import WineBarCard from '../molecules/WineBarCard';
+import TwoBarSelectionButton from '../atoms/buttons/TwoBarSelextion';
 
 const ExploreScreen = ({navigation}: any) => {
   const {winebars, error, loading} = useAllWineBars();
+
+  const [selectedView, setSelectedView] = React.useState<'all' | 'near'>('all');
 
   const renderWineBar = ({item}: {item: Winebar}) => (
     <WineBarCard
@@ -34,10 +30,17 @@ const ExploreScreen = ({navigation}: any) => {
       <HorizontalSpacer spacing={1} />
       <Subtitle styles={styles.subtitle}>Vinbarer med provningar</Subtitle>
       <HorizontalSpacer spacing={1} />
-      <View style={styles.bottomActionSection}>
-        <SubtitleSmall styles={{color: 'white'}}>Visa alla</SubtitleSmall>
-        <SubtitleSmall styles={{color: 'white'}}>Visa nära mig</SubtitleSmall>
-      </View>
+
+      <TwoBarSelectionButton
+        selected={selectedView}
+        buttonOneTitle="Visa alla"
+        buttonOneValue="all"
+        buttonTwoTitle="Nära mig"
+        buttonTwoValue="near"
+        onPressOne={() => setSelectedView('all')}
+        onPressTwo={() => setSelectedView('near')}
+      />
+
       <HorizontalSpacer spacing={1} />
     </>
   );
@@ -69,7 +72,7 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   contentContainer: {
-    paddingHorizontal: 24,
+    paddingHorizontal: 16,
     flex: 1,
     height: '100%',
     flexDirection: 'column',

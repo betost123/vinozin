@@ -6,8 +6,11 @@ interface Props {
   children: any;
 }
 
-const Card: React.FC<Props> = ({children}) => {
-  return <View style={styles.container}>{children}</View>;
+const Card: React.FC<Props & {style?: any}> = ({
+  children,
+  style: customStyles,
+}) => {
+  return <View style={[styles.container, customStyles]}>{children}</View>;
 };
 
 const styles = StyleSheet.create({

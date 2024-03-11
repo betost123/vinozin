@@ -8,6 +8,7 @@ import Card from '../atoms/Card';
 import HugButton from '../atoms/buttons/HugButton';
 import WineCard from '../molecules/WineCard';
 import {useAllWines} from '../graphql/hooks/useAllWines';
+import InfoCard from '../molecules/InfoCard';
 
 const HomeScreen = ({navigation}: any) => {
   const {wines, error, loading} = useAllWines();
@@ -32,6 +33,27 @@ const HomeScreen = ({navigation}: any) => {
               onPress={() => navigation.navigate('WineProfile')}
             />
           </Card>
+          <HorizontalSpacer spacing={1} />
+
+          <InfoCard
+            title="Hitta vinprovningar"
+            onPress={() => navigation.navigate('Explore')}
+          />
+          <HorizontalSpacer spacing={1} />
+          <InfoCard
+            title="Vinprotokoll"
+            onPress={() => navigation.navigate('Explore')}
+          />
+          <HorizontalSpacer spacing={1} />
+          <InfoCard
+            title="Mina viner"
+            onPress={() => navigation.navigate('Explore')}
+          />
+          <HorizontalSpacer spacing={1} />
+          <InfoCard
+            title="Lär dig mer"
+            onPress={() => navigation.navigate('Explore')}
+          />
         </ScrollView>
       </View>
     </SafeAreaView>

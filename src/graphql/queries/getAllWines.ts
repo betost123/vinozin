@@ -9,6 +9,15 @@ export const GET_ALL_WINES = gql`
         image {
           url
         }
+        country
+        region
+        grape
+        color
+        type
+        year
+        description
+        producer
+        character
       }
     }
   }
