@@ -56,6 +56,7 @@ const TextField: React.FC<Props> = ({
         value={value}
         defaultValue={defaultValue}
         placeholder={placeholder}
+        placeholderTextColor={colors.green}
         style={[styles.textField, style]}
         onChangeText={onChangeText}
         onFocus={onFocus}

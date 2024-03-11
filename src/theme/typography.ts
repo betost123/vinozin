@@ -23,8 +23,8 @@ const typography = {
     color: colors.black,
   },
   bodySmall: {
-    fontSize: 12,
-    fontFamily: 'Tajawal-Regular',
+    fontSize: 14,
+    fontFamily: 'Tajawal-Light',
     color: colors.white,
   },
   bodyTiny: {
