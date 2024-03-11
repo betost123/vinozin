@@ -1,19 +1,41 @@
 import * as React from 'react';
 import {Image, ScrollView, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {BodySmallFat, Subtitle, SubtitleSmall} from '../atoms/Typography';
+import {Body, BodySmallFat, Subtitle, SubtitleSmall} from '../atoms/Typography';
 import {HorizontalSpacer} from '../atoms/Spacers';
 import {colors} from '../theme/colors';
-import WineCard from '../molecules/WineCard';
+import auth from '@react-native-firebase/auth';
+import {getCurrentUser} from '../firebase/user';
 
 const WineProfileScreen = ({navigation}: any) => {
+  const [currentUser, setCurrentUser] = React.useState<any>(undefined);
+
+  const userId = auth().currentUser?.uid;
+
+  const getMe = async (id: string) => {
+    try {
+      const myUser = await getCurrentUser(id);
+      setCurrentUser(myUser);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  React.useEffect(() => {
+    if (userId) {
+      getMe(userId);
+    }
+  }, []);
+
   return (
     <SafeAreaView style={styles.background}>
       <View style={styles.contentContainer}>
         <ScrollView>
           <Subtitle styles={styles.subtitle}>Vinprofil</Subtitle>
           <HorizontalSpacer spacing={1} />
-
+          <Body styles={{color: colors.white}}>
+            Antal viner: {currentUser?.registeredWines?.length}
+          </Body>
           <HorizontalSpacer spacing={1} />
         </ScrollView>
       </View>

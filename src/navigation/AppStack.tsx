@@ -7,6 +7,7 @@ import ExploreScreen from '../screens/Explore';
 import TastingsScreen from '../screens/Tastings';
 import WineProfileScreen from '../screens/WineProfile';
 import TastingProtocolScreen from '../screens/TastingProtocol';
+import MyWinesScreen from '../screens/MyWines';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,6 +17,7 @@ function HomeStack() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="MyWines" component={MyWinesScreen} />
     </Stack.Navigator>
   );
 }

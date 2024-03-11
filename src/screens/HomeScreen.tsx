@@ -1,25 +1,43 @@
 import * as React from 'react';
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {Body, BodyTiny, Subtitle, SubtitleSmall} from '../atoms/Typography';
+import {Subtitle, SubtitleSmall} from '../atoms/Typography';
 import {HorizontalSpacer} from '../atoms/Spacers';
 import {colors} from '../theme/colors';
 import Card from '../atoms/Card';
 import HugButton from '../atoms/buttons/HugButton';
 import WineCard from '../molecules/WineCard';
-import {useAllWines} from '../graphql/hooks/useAllWines';
 import InfoCard from '../molecules/InfoCard';
+import auth from '@react-native-firebase/auth';
+import {getCurrentUser} from '../firebase/user';
 
 const HomeScreen = ({navigation}: any) => {
-  const {wines, error, loading} = useAllWines();
+  const user = auth().currentUser;
 
-  console.log(wines);
+  const [currentUser, setCurrentUser] = React.useState<any>(undefined);
+
+  const getMe = async (id: string) => {
+    try {
+      const myUser = await getCurrentUser(id);
+      setCurrentUser(myUser);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  React.useEffect(() => {
+    if (user?.uid) {
+      getMe(user.uid);
+    }
+  }, [user]);
 
   return (
     <SafeAreaView style={styles.background}>
       <View style={styles.contentContainer}>
         <ScrollView>
-          <Subtitle styles={styles.subtitle}>Välkommen Betina!</Subtitle>
+          <Subtitle styles={styles.subtitle}>
+            Välkommen {currentUser?.name}!
+          </Subtitle>
           <HorizontalSpacer spacing={1} />
           <WineCard />
 
@@ -47,7 +65,7 @@ const HomeScreen = ({navigation}: any) => {
           <HorizontalSpacer spacing={1} />
           <InfoCard
             title="Mina viner"
-            onPress={() => navigation.navigate('Explore')}
+            onPress={() => navigation.navigate('MyWines')}
           />
           <HorizontalSpacer spacing={1} />
           <InfoCard

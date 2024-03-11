@@ -46,7 +46,9 @@ const WineCard: React.FC<Props> = ({short}) => {
         <Text>
           <HugButton
             title="Läs mer"
-            onPress={() => navigation.navigate('TastingProtocol')}
+            onPress={() =>
+              navigation.navigate('Tastings', {screen: 'TastingProtocol'})
+            }
           />
         </Text>
       </View>

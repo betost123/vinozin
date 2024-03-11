@@ -51,7 +51,7 @@ const TastingsScreen = ({navigation}: any) => {
           <HorizontalSpacer spacing={1} />
           <SecondaryButton
             title="Vinprotokoll"
-            onPress={() => console.log('open tasting protocol')}
+            onPress={() => navigation.navigate('TastingProtocol')}
           />
           <HorizontalSpacer spacing={1} />
           <PrimaryButton

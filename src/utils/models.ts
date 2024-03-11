@@ -9,7 +9,7 @@ export interface Winebar {
 export interface Wine {
   id: string;
   name: string;
-  image: {url: string};
+  image?: {url: string};
   country?: string;
   region?: string;
   grape?: string;
@@ -18,5 +18,6 @@ export interface Wine {
   year?: string;
   description?: string;
   producer?: string;
-  character?: string;
+  character?: string | string[];
+  rating?: number;
 }

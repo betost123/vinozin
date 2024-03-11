@@ -19,17 +19,41 @@ import SelectButton from '../atoms/buttons/SelectButton';
 import WineColorBlob from '../atoms/WineColorBlob';
 import RatingMolecule from '../molecules/RatingMolecule';
 import PrimaryButton from '../atoms/buttons/PrimaryButton';
+import auth from '@react-native-firebase/auth';
+import {addWineToUser, getCurrentUser} from '../firebase/user';
+import HugButton from '../atoms/buttons/HugButton';
 
 const TastingProtocolScreen = ({navigation}: any) => {
   const {wines, error, loading} = useAllWines();
+  const [currentUser, setCurrentUser] = React.useState<any>(undefined);
+  const userId = auth().currentUser?.uid;
 
   const [recommended, setRecommended] = React.useState<'rec' | 'notrec'>('rec');
+
+  const [ownWine, setOwnWine] = React.useState('');
+
   const [wineColor, setWineColor] = React.useState<
     'ruby' | 'dark' | 'light' | 'garnet' | undefined
   >();
   const [aromas, setAromas] = React.useState<Array<string>>([]);
   const [tastes, setTastes] = React.useState<Array<string>>([]);
   const [rating, setRating] = React.useState<1 | 2 | 3 | 4 | 5 | 0>();
+
+  const [wineAdded, setWineAdded] = React.useState(false);
+
+  const getMe = async (id: string) => {
+    try {
+      const myUser = await getCurrentUser(id);
+      setCurrentUser(myUser);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  React.useEffect(() => {
+    if (userId) {
+      getMe(userId);
+    }
+  }, []);
 
   const checkIfAromaIsIncluded = (aroma: string) => {
     return aromas.includes(aroma);
@@ -59,6 +83,34 @@ const TastingProtocolScreen = ({navigation}: any) => {
 
   const selectedWine: Wine | undefined = wines?.items[0];
 
+  const onRegisterNewWine = () => {
+    if (userId) {
+      if (recommended === 'rec' && selectedWine !== undefined) {
+        const newWine: Wine = {
+          id: selectedWine.id,
+          name: selectedWine.name,
+          country: selectedWine?.country,
+          region: selectedWine?.region,
+          character: tastes,
+          type: wineColor,
+          rating: rating,
+          image: selectedWine.image,
+        };
+
+        addWineToUser(userId, newWine);
+      } else {
+        const newWine: Wine = {
+          id: Math.floor(Math.random() * 100).toString(),
+          name: ownWine,
+        };
+
+        addWineToUser(userId, newWine);
+      }
+    }
+
+    setWineAdded(true);
+  };
+
   return (
     <SafeAreaView style={styles.background}>
       <View style={styles.contentContainer}>
@@ -84,14 +136,18 @@ const TastingProtocolScreen = ({navigation}: any) => {
           <HorizontalSpacer spacing={1} />
           {recommended === 'notrec' && (
             <View>
-              <TextField title="Vin" placeholder="Vinets namn" />
+              <TextField
+                title="Vin"
+                placeholder="Vinets namn"
+                onChangeText={value => setOwnWine(value)}
+              />
               <HorizontalSpacer spacing={2} />
             </View>
           )}
 
           <View>
             <Image
-              source={{uri: selectedWine?.image.url}}
+              source={{uri: selectedWine?.image?.url ?? ''}}
               style={styles.image}
             />
           </View>
@@ -292,10 +348,14 @@ const TastingProtocolScreen = ({navigation}: any) => {
           <RatingMolecule rating={rating} setRating={setRating} />
 
           <HorizontalSpacer spacing={1} />
-          <PrimaryButton
-            title="Spara"
-            onPress={() => console.log('save and go to next wine')}
-          />
+          {wineAdded ? (
+            <HugButton
+              title="Sparat, gå till nästa"
+              onPress={() => console.log('go to next wine')}
+            />
+          ) : (
+            <PrimaryButton title="Spara" onPress={onRegisterNewWine} />
+          )}
 
           <HorizontalSpacer spacing={2} />
         </ScrollView>

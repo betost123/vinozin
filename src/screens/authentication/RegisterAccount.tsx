@@ -12,6 +12,7 @@ import TextField from '../../atoms/TextField';
 import {BodySmallFat, Subtitle} from '../../atoms/Typography';
 import SecondaryButton from '../../atoms/buttons/SecondaryButton';
 import auth from '@react-native-firebase/auth';
+import {addUser} from '../../firebase/user';
 
 const RegisterAccountScreen = ({navigation}: any) => {
   const image = {
@@ -32,6 +33,7 @@ const RegisterAccountScreen = ({navigation}: any) => {
         console.log('user created');
         console.log(response.user);
         console.log(response.additionalUserInfo);
+        addUser(response.user.uid, response.user?.email ?? '');
         setAccountCreated(true);
       })
       .catch(error => {
